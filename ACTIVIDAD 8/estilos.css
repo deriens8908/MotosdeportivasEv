@@ -1,0 +1,140 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo general */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Encabezado */
+header {
+  background-color: #000;
+  color: red;
+  padding: 20px 0;
+  text-align: center;
+  animation: slideIn 1s ease-out;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-top: 10px;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: red;
+  width: 0;
+  transition: width 0.4s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Secciones */
+section {
+  margin: 40px 0;
+  animation: fadeInUp 1s ease;
+}
+
+/* Galería */
+.galeria {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 300px;
+  border-radius: 10px;
+  transition: transform 0.5s ease, box-shadow 0.5s;
+  box-shadow: 0 0 10px red;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000;
+}
+
+/* Formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 15px;
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #555;
+  background-color: #222;
+  color: #fff;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  background: red;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background: darkred;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #999;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    transform: translateY(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
